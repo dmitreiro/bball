@@ -16,6 +16,20 @@ v0 = 0.0         # initial velocity [m/s]
 t_max = 3.0      # total simulation time [s]
 dt = 0.0005      # time step [s]
 
+def plotting(t, x):
+    # -----------------------------
+    # Plot position over time
+    # -----------------------------
+    plt.figure(figsize=(8, 4))
+    plt.plot(t, x)
+    plt.xlabel("Time [s]")
+    plt.ylabel("Position [m]")
+    plt.title("Bouncing ball simulation")
+    plt.xlim(left=0)
+    plt.ylim(bottom=0)
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
 
 def main():
     # -----------------------------
@@ -51,19 +65,7 @@ def main():
 
     a[-1] = a[-2]
 
-    # -----------------------------
-    # Plot position over time
-    # -----------------------------
-    plt.figure(figsize=(8, 4))
-    plt.plot(t, x)
-    plt.xlabel("Time [s]")
-    plt.ylabel("Position [m]")
-    plt.title("Bouncing ball simulation")
-    plt.xlim(left=0)
-    plt.ylim(bottom=0)
-    plt.grid(True)
-    plt.tight_layout()
-    plt.show()
+    plotting(t, x)
 
 if __name__ == "__main__":
     main()
